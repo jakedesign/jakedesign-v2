@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+$color-primary: #375BBB;
+$color-secondary: #FAFAFA;
+$drop-down-hover: #E1E1E1;
+$background-primary: #E6E6E6;
+$background-secondary: #FAFAFA;
+
+
+// UTILITIES 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: $background-secondary;
+    font-size: 1.6rem;
+    color: $color-primary;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: $color-primary;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+/////////////////////////////////////////////////////////////// LANDING PAGE
+
+.landing-page  {
+
+    ////////////////////////////////// BACKGROUND & CONTAINER
+
+    background-color: #E0E0E0;
+    .landing-grid {
+        height: 100vh;
+        max-width: 140rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: 0.4fr 2.1fr 0.4fr 1.1fr;
+        grid-template-areas:
+            "nav nav"
+            "title emoji"
+            "button button"
+            "arrow arrow"
+        ;
+
+        /////////////////////////////// NAV
+
+        nav {
+            grid-area: nav;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.8rem;
+            ul {
+                display: flex;
+                li {
+                    margin-left: 6rem;
+                }
+            }
+        }
+
+        /////////////////////////////// HERO
+
+        // TITLE
+        .title {
+            padding-top: 8rem;
+            grid-area: title;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: start;
+            h2 {
+                font-size: 5rem;
+                font-weight: 300;
+                line-height: 1.6;
+            }
+        }
+        // EMOJI
+        .emoji {
+            padding-top: 8rem;
+            grid-area: emoji;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             .circle {
+                 border: 2px solid $color-primary;
+                 border-radius: 50%;
+                 min-height: 40rem;
+                 min-width: 40rem;
+                 background-image: url(/images/emoji_peace.svg);
+                 background-position: 3.4rem 2.3rem;
+                 background-repeat: no-repeat;
+                 background-size: 37rem;
+             }    
+        }
+        // HOVER BUTTON
+        .hover-btn {
+            grid-area: button;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            border-bottom: 2px solid;
+            button {
+                border: 2px solid $color-primary;
+                color: $color-primary;
+                padding: 2rem 5rem;
+                font-size: 1.8rem;
+                font-weight: 300;
+                font-family: 'Space Grotesk', sans-serif;
+                background: transparent;
+                margin-bottom: -0.2rem;
+            }
+        }
+        // DROPDOWN BUTTON
+        .down-arrow {
+            padding-top: 8rem;
+            grid-area: arrow;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 1rem;
+            img {
+                height: 5rem;
+            }
+            
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////// PROJECTS SECTION
+
+.projects {
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    .projects-grid {
+        margin: 15rem 0;
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-gap: 10rem 5rem;
+        grid-template-areas: 
+            "image1 info1"
+            "image2 info2"
+            "image3 info3"
+            "image4 info4"
+        ;
+        //// PROJECT: MUNCH
+        .project-image-1 {
+            height: 30rem;
+            background-image: url(/images/munch-iphone.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+        .project-info-1 {
+            height: 35rem;
+            display: grid;
+            grid-template-columns: 8rem 1fr 8rem;
+            grid-template-rows: 0.5fr 8rem 1.5fr;
+            grid-template-areas: 
+            ". . ."
+            "number heading button"
+            ". description description"
+            ;
+            .number {
+                grid-area: number;
+                border-bottom: .2rem solid $color-primary;
+                border-right: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .heading {
+                grid-area: heading;
+                border-bottom: .2rem solid $color-primary;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding-left: 2rem;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .button {
+                grid-area: button;
+                border: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url(/images/arrow-angle.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 1.7rem;
+            }
+            .description {
+                grid-area: description;
+                display: flex;
+                justify-content: left;
+                align-items: flex-start;
+                padding: 2rem 0 0 2rem;
+                font-size: 2.3rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+        //// PROJECT: DEPARTMENT OF ENERGY
+        .project-image-2 {
+            height: 30rem;
+            background-image: url(/images/doe-mac.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+        .project-info-2 {
+            height: 35rem;
+            display: grid;
+            grid-template-columns: 8rem 1fr 8rem;
+            grid-template-rows: 0.5fr 8rem 1.5fr;
+            grid-template-areas: 
+            ". . ."
+            "number heading button"
+            ". description description"
+            ;
+            .number {
+                grid-area: number;
+                border-bottom: .2rem solid $color-primary;
+                border-right: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .heading {
+                grid-area: heading;
+                border-bottom: .2rem solid $color-primary;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding-left: 2rem;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .button {
+                grid-area: button;
+                border: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url(/images/arrow-angle.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 1.7rem;
+            }
+            .description {
+                grid-area: description;
+                display: flex;
+                justify-content: left;
+                align-items: flex-start;
+                padding: 2rem 0 0 2rem;
+                font-size: 2.3rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+        //// PROJECT: PLAY IT FORWARD
+        .project-image-3 {
+            height: 30rem;
+            background-image: url(/images/pif-mac.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+        .project-info-3 {
+            height: 35rem;
+            display: grid;
+            grid-template-columns: 8rem 1fr 8rem;
+            grid-template-rows: 0.5fr 8rem 1.5fr;
+            grid-template-areas: 
+            ". . ."
+            "number heading button"
+            ". description description"
+            ;
+            .number {
+                grid-area: number;
+                border-bottom: .2rem solid $color-primary;
+                border-right: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .heading {
+                grid-area: heading;
+                border-bottom: .2rem solid $color-primary;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding-left: 2rem;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .button {
+                grid-area: button;
+                border: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url(/images/arrow-angle.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 1.7rem;
+            }
+            .description {
+                grid-area: description;
+                display: flex;
+                justify-content: left;
+                align-items: flex-start;
+                padding: 2rem 0 0 2rem;
+                font-size: 2.3rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+        //// PROJECT: MOMENTUM
+        .project-image-4 {
+            height: 30rem;
+            background-image: url(/images/momentum-iphone.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+        .project-info-4 {
+            height: 35rem;
+            display: grid;
+            grid-template-columns: 8rem 1fr 8rem;
+            grid-template-rows: 0.5fr 8rem 1.5fr;
+            grid-template-areas: 
+            ". . ."
+            "number heading button"
+            ". description description"
+            ;
+            .number {
+                grid-area: number;
+                border-bottom: .2rem solid $color-primary;
+                border-right: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .heading {
+                grid-area: heading;
+                border-bottom: .2rem solid $color-primary;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                padding-left: 2rem;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+            .button {
+                grid-area: button;
+                border: .2rem solid $color-primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url(/images/arrow-angle.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 1.7rem;
+            }
+            .description {
+                grid-area: description;
+                display: flex;
+                justify-content: left;
+                align-items: flex-start;
+                padding: 2rem 0 0 2rem;
+                font-size: 2.3rem;
+                font-weight: 300;
+                line-height: 1.5;
+            }
+        }
+    }
+
+}
+
+/////////////////////////////////////////////////////////////// FOOTER
+
+footer {
+    background-color: $background-primary;
+    
+    .footer-grid {
+        display: grid;
+        height: 28rem;
+        max-width: 140rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.2rem 1fr;
+        grid-template-areas: 
+        "hello up"
+        "line line"
+        "social legal"
+        ;
+        .say-hello {
+            grid-area: hello;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding-bottom: 2.2rem;
+            font-size: 3rem;
+            img {
+                height: 2rem;
+            }
+        }
+        .up {
+            grid-area: up;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-bottom: 2.2rem;
+            font-size: 3rem;
+            img {
+                height: 3rem;
+                padding: 0 0 0.3rem 1rem;
+            }
+        }
+        .line {
+            grid-area: line;
+            height: 0.1rem;
+            border-bottom: 0.2rem solid $color-primary;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .social {
+            grid-area: social;
+            font-size: 1.8rem;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .page-info {
+            grid-area: legal;
+            font-size: 1.8rem;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            p {
+                padding-left: 2rem;
+            }
+        }   
+    }
+}
+
+/////////////////////////////////////////////////////////////// BOTTOM BAR
+
+.bar {
+    grid-area: bar;
+    background-color: $color-primary;
+    height: 4rem;
+    color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-8px);}
+    60% {transform: translateY(-10px);}
+  }
+  .bounce {
+    animation-name: bounce;
+  }

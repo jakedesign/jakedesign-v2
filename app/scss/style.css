@@ -52,7 +52,7 @@ html {
       grid-template-columns: 1.2fr 0.8fr;
   -ms-grid-rows: 0.4fr 2.1fr 0.4fr 1.1fr;
       grid-template-rows: 0.4fr 2.1fr 0.4fr 1.1fr;
-      grid-template-areas: "nav nav" "title emoji" "button button" "arrow arrow";
+      grid-template-areas: "nav nav" "title emoji" "button button" "arrow arrow";
 }
 
 .landing-page .landing-grid nav {
@@ -79,7 +79,7 @@ html {
 }
 
 .landing-page .landing-grid nav ul li {
-  margin-left: 6rem;
+  margin-left: 4rem;
 }
 
 .landing-page .landing-grid .title {
@@ -200,7 +200,7 @@ html {
   -ms-grid-rows: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-gap: 10rem 5rem;
-      grid-template-areas: "image1 info1" "image2 info2" "image3 info3" "image4 info4";
+      grid-template-areas: "image1 info1" "image2 info2" "image3 info3" "image4 info4";
 }
 
 .projects .projects-grid .project-image-1 {
@@ -227,7 +227,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-1 .number {
@@ -332,7 +332,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-2 .number {
@@ -437,7 +437,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-3 .number {
@@ -542,7 +542,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-4 .number {
@@ -638,7 +638,7 @@ footer .footer-grid {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 0.2rem 1fr;
       grid-template-rows: 1fr 0.2rem 1fr;
-      grid-template-areas: "hello up" "line line" "social legal";
+      grid-template-areas: "hello up" "line line" "social legal";
 }
 
 footer .footer-grid .say-hello {
@@ -765,8 +765,8 @@ footer .footer-grid .page-info p {
             transform: translateY(0);
   }
   40% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
   }
   60% {
     -webkit-transform: translateY(-10px);
@@ -780,8 +780,8 @@ footer .footer-grid .page-info p {
             transform: translateY(0);
   }
   40% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
   }
   60% {
     -webkit-transform: translateY(-10px);

@@ -73,18 +73,24 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 5rem;
+  gap: 4rem;
   margin: 2rem 0rem;
 }
 
 .landing-page .landing-grid .nav__listlogo {
   margin-right: auto;
   cursor: pointer;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+.landing-page .landing-grid .nav__listlogo:hover {
+  color: rgba(55, 90, 187, 0.4);
 }
 
 .landing-page .landing-grid .nav__listitem {
   position: relative;
-  padding: 2rem 0rem;
+  padding: 2rem 0.5rem;
   cursor: pointer;
 }
 
@@ -94,8 +100,8 @@ html {
   height: 0.3rem;
   position: absolute;
   background-color: #375BBB;
-  -webkit-transition: width 200ms ease-in-out;
-  transition: width 200ms ease-in-out;
+  -webkit-transition: width 250ms ease-in-out;
+  transition: width 250ms ease-in-out;
   bottom: 1.5rem;
   left: 0rem;
 }
@@ -111,7 +117,7 @@ html {
 
 .landing-page .landing-grid .nav__listitemdrop {
   position: absolute;
-  top: 5.5rem;
+  top: 5.9rem;
   left: -7.6rem;
   -webkit-box-shadow: 0 0 25px rgba(44, 44, 44, 0.2);
           box-shadow: 0 0 25px rgba(44, 44, 44, 0.2);
@@ -128,18 +134,28 @@ html {
   gap: 0.5rem;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
 }
 
 .landing-page .landing-grid .nav__listitemdrop li {
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   -webkit-transition: background-color 200ms ease-in-out;
   transition: background-color 200ms ease-in-out;
 }
 
 .landing-page .landing-grid .nav__listitemdrop li:hover, .landing-page .landing-grid .nav__listitemdrop li:focus {
-  background-color: rgba(55, 90, 187, 0.3);
+  background-color: rgba(55, 90, 187, 0.2);
+}
+
+.landing-page .landing-grid .nav__listitem, .landing-page .landing-grid .nav__arrow {
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.landing-page .landing-grid .nav__listitem:hover .nav__arrow, .landing-page .landing-grid .nav__arrow:hover .nav__arrow {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .landing-page .landing-grid .title {
@@ -901,32 +917,9 @@ footer .footer-grid .page-info p {
     grid-gap: 0.5rem;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 0.4fr 1fr 1fr 0.4fr 1.1fr;
-        grid-template-rows: 0.4fr 1fr 1fr 0.4fr 1.1fr;
+    -ms-grid-rows: 0.4fr 0.8fr 0.8fr 0.5fr 1fr;
+        grid-template-rows: 0.4fr 0.8fr 0.8fr 0.5fr 1fr;
         grid-template-areas: "nav" "emoji" "title" "button" "arrow";
-  }
-  .landing-page .landing-grid nav {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: nav;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 1.8rem;
-  }
-  .landing-page .landing-grid nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .landing-page .landing-grid nav ul li {
-    margin-left: 4rem;
   }
   .landing-page .landing-grid .title {
     padding: 1rem;

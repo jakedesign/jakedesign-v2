@@ -48,6 +48,9 @@ html {
     ////////////////////////////////// BACKGROUND & CONTAINER
 
     background-color: #E0E0E0;
+
+    ////////////////////////////////////// GRID
+
     .landing-grid {
         height: 100vh;
         max-width: 140rem;
@@ -66,33 +69,32 @@ html {
 
         /////////////////////////////// NAV
 
-        nav {
-            grid-area: nav;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.8rem;
-            ul {
-                display: flex;
-                li {
-                    margin-left: 4rem;
+        .nav {
+           grid-area: nav; 
+           font-size: 1.8rem;
+            &__list {
+               display: flex;
+               justify-content: flex-end;
+               align-items: center;
+               gap: 5rem;
+               margin: 2rem 0rem;
+                &logo {
+                    margin-right: auto;
+                    cursor: pointer;
                 }
-            }
-            .nav-items {
-                a {
-                    padding: 3rem 0.5rem;
-                }
-                .navlink-1 {
+                &item {
                     position: relative;
+                    padding: 2rem 0rem;
+                    cursor: pointer;
                     &::after {
                         content: "";
-                        width: 0;
+                        width: 0%;
                         height: 0.3rem;
                         position: absolute;
-                        left: 0rem;
-                        bottom: 2.4rem;
                         background-color: $color-primary;
-                        transition:width 200ms ease-in;
+                        transition: width 200ms ease-in-out;
+                        bottom: 1.5rem;
+                        left: 0rem;
                     }
                     &:hover::after, &:focus::after {
                         width: 100%;
@@ -101,36 +103,33 @@ html {
                         opacity: 1;
                         visibility: visible;
                     }
-                 }
-                .nav-dropdown {
-                    position: absolute;
-                    margin: 0;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    top: 6.8rem;
-                    left: -8rem;
-                    box-shadow: 0px 0px 35px rgba(46, 46, 46, 0.15);
-                    background-color: white;
-                    border-radius: 0px;
-                    padding: 1rem;
-                    width: 24rem;
-                    gap: 0.5rem;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: opacity 200ms ease-in-out;
-                    li {
-                        padding: 1rem 1rem;
-                        margin: 0;
-                        transition: background-color 200ms;
-                        &:hover, &:focus {
-                            background-color:$color-primary;
-                            color: white;
+                    &drop {
+                        position: absolute;
+                        top: 5.5rem;
+                        left: -7.6rem;
+                        box-shadow: 0 0 25px rgba(44, 44, 44, 0.2);
+                        background-color: white;
+                        padding: 1rem;
+                        width: 23.4rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: opacity 200ms ease-in-out;
+                        li {
+                            padding: 0.5rem 1rem;
+                            transition: background-color 200ms ease-in-out;
+                            &:hover, &:focus {
+                                background-color: rgba(55, 90, 187, 0.3);
+                            }
                         }
                     }
-                } 
+                }
             }
+            
         }
+        
 
         /////////////////////////////// HERO
 

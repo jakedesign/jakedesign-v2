@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Space Grotesk', sans-serif;
-  background-color: #FAFAFA;
+  background-color: #ffffff;
   font-size: 1.6rem;
   color: #375BBB;
 }
@@ -37,7 +37,7 @@ html {
 }
 
 .landing-page {
-  background-color: #E0E0E0;
+  background-color: #E6E6E6;
 }
 
 .landing-page .landing-grid {
@@ -52,7 +52,7 @@ html {
       grid-template-columns: 1.2fr 0.8fr;
   -ms-grid-rows: 0.4fr 2.1fr 0.4fr 1.1fr;
       grid-template-rows: 0.4fr 2.1fr 0.4fr 1.1fr;
-      grid-template-areas: "nav nav" "title emoji" "button button" "arrow arrow";
+      grid-template-areas: "nav nav" "title emoji" "button button" "arrow arrow";
 }
 
 .landing-page .landing-grid .nav {
@@ -121,7 +121,7 @@ html {
   left: -7.6rem;
   -webkit-box-shadow: 0 0 25px rgba(44, 44, 44, 0.2);
           box-shadow: 0 0 25px rgba(44, 44, 44, 0.2);
-  background-color: white;
+  background-color: #ffffff;
   padding: 1rem;
   width: 23.4rem;
   display: -webkit-box;
@@ -148,6 +148,10 @@ html {
   background-color: rgba(55, 90, 187, 0.2);
 }
 
+.landing-page .landing-grid .nav__listitemdrop a {
+  width: 23rem;
+}
+
 .landing-page .landing-grid .nav__listitem, .landing-page .landing-grid .nav__arrow {
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
@@ -156,6 +160,32 @@ html {
 .landing-page .landing-grid .nav__listitem:hover .nav__arrow, .landing-page .landing-grid .nav__arrow:hover .nav__arrow {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+.landing-page .landing-grid .nav__toggle {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 4rem;
+  height: 2.5rem;
+  top: 4rem;
+  right: 4rem;
+}
+
+.landing-page .landing-grid .nav__toggle .bar {
+  height: 0.3rem;
+  width: 100%;
+  background-color: #375BBB;
 }
 
 .landing-page .landing-grid .title {
@@ -276,7 +306,7 @@ html {
   -ms-grid-rows: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-gap: 10rem 5rem;
-      grid-template-areas: "image1 info1" "image2 info2" "image3 info3" "image4 info4";
+      grid-template-areas: "image1 info1" "image2 info2" "image3 info3" "image4 info4";
 }
 
 .projects .projects-grid .project-image-1 {
@@ -303,7 +333,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-1 .number {
@@ -408,7 +438,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-2 .number {
@@ -513,7 +543,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-3 .number {
@@ -618,7 +648,7 @@ html {
       grid-template-columns: 8rem 1fr 8rem;
   -ms-grid-rows: 0.5fr 8rem 1.5fr;
       grid-template-rows: 0.5fr 8rem 1.5fr;
-      grid-template-areas: ". . ." "number heading button" ". description description";
+      grid-template-areas: ". . ." "number heading button" ". description description";
 }
 
 .projects .projects-grid .project-info-4 .number {
@@ -714,7 +744,7 @@ footer .footer-grid {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 0.2rem 1fr;
       grid-template-rows: 1fr 0.2rem 1fr;
-      grid-template-areas: "hello up" "line line" "social legal";
+      grid-template-areas: "hello up" "line line" "social legal";
 }
 
 footer .footer-grid .say-hello {
@@ -901,6 +931,53 @@ footer .footer-grid .page-info p {
 }
 
 @media (max-width: 790px) {
+  .landing-page .landing-grid .nav {
+    grid-area: none;
+    position: absolute;
+    left: 0rem;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  .landing-page .landing-grid .nav__list {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0rem;
+    height: 100vh;
+    background-color: none;
+  }
+  .landing-page .landing-grid .nav__listlogo {
+    padding: 2rem;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .landing-page .landing-grid .nav__listlogo:hover {
+    color: none;
+  }
+  .landing-page .landing-grid .nav__listitem {
+    display: none;
+    padding: 1rem;
+    margin: 5rem 0;
+    cursor: pointer;
+  }
+  .landing-page .landing-grid .nav__listitem::after {
+    width: 0;
+  }
+  .landing-page .landing-grid .nav__listitem:hover::after, .landing-page .landing-grid .nav__listitem:focus::after {
+    width: 0;
+  }
+  .landing-page .landing-grid .nav__listitem:hover ul, .landing-page .landing-grid .nav__listitem:focus ul {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .landing-page .landing-grid .nav__listitemdrop {
+    display: none;
+  }
   .landing-page .landing-grid .title h2 {
     font-size: clamp(2.4rem, 3.4vw, 5rem);
   }
@@ -909,6 +986,18 @@ footer .footer-grid .page-info p {
     min-width: 26rem;
     background-position: 2.5rem 2rem;
     background-size: 24rem;
+  }
+  .landing-page .landing-grid .nav__listitem, .landing-page .landing-grid .nav__arrow {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .landing-page .landing-grid .nav__listitem:hover .nav__arrow, .landing-page .landing-grid .nav__arrow:hover .nav__arrow {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .landing-page .landing-grid .nav__toggle {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -919,7 +1008,7 @@ footer .footer-grid .page-info p {
         grid-template-columns: 1fr;
     -ms-grid-rows: 0.4fr 0.8fr 0.8fr 0.5fr 1fr;
         grid-template-rows: 0.4fr 0.8fr 0.8fr 0.5fr 1fr;
-        grid-template-areas: "nav" "emoji" "title" "button" "arrow";
+        grid-template-areas: "nav" "emoji" "title" "button" "arrow";
   }
   .landing-page .landing-grid .title {
     padding: 1rem;

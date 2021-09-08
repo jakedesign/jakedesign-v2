@@ -9,43 +9,47 @@
 </head>
 <body>
     <!-- LANDING PAGE HEADER -->
-    <header class="landing-page">
-        <div class="landing-grid">
+    <header class="landing__page">
+        <div class="landing__grid">
             <!-- NAV -->
-            <nav class="nav">
+            <nav>
+
+                <div class="nav__toggle">
+                    <input type="checkbox" name="" id="toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+
+                <div class="nav__logo"><a href="index.html">jakedesign.io</a></div>
                 <ul class="nav__list">
-                    <li class="nav__listlogo">jakedesign.io</li>
-                    <a href="#" class="nav__toggle">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </a>
-                    <li class="nav__listitem"><a href="#">Work <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
+                    <li class="nav__listitem"><a href="page__work">Work <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
                         <ul class="nav__listitemdrop">
-                            <li><a href="#">Department of Energy</a></li>
-                            <li><a href="munch.html">Munch</a></li>
-                            <li><a href="#">Play it Forward</a></li>
-                            <li><a href="#">Momentum</a></li>
+                            <li><a class="nav__link1" href="project_doe.html">Department of Energy</a></li>
+                            <li><a class="nav__link2" href="project_munch.html">Munch</a></li>
+                            <li><a class="nav__link3" href="project_pif.html">Play it Forward</a></li>
+                            <li><a class="nav__link4" href="project_momentum.html">Momentum</a></li>
                         </ul>
                     </li>
-                    <li class="nav__listitem"><a href="aboutme.html">About Me <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
-                    <li class="nav__listitem"><a href="#">Resume <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
-                    <li class="nav__listitem"><a href="#">Contact <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
+                    <li class="nav__listitem"><a href="page_aboutme.html">About Me <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
+                    <li class="nav__listitem"><a href="page_resume.html">Resume <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
+                    <li class="nav__listitem"><a href="page_contact.html">Contact <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
                 </ul>
             </nav>
+
             <!-- HERO -->
-            <div class="title">
+            <!-- <div class="hero__title">
                 <h2>A budding UX/UI designer with a passion for creating <b>meaningful</b>, <b>intuitive</b>, and <b>purposeful</b> design experiences!</h2>
             </div>
-            <div class="emoji">
+            <div class="hero__emoji">
                 <div class="circle"></div>
             </div>
-            <div class="hover-btn">
+            <div class="hero__btn">
                 <button>
                     Hover Over Me!
                 </button>
             </div>
-            <div class="down-arrow animated bounce">
+            <div class="hero__arrow animated bounce">
                 <img src="images/arrow-down.svg" alt="">
             </div>
             
@@ -118,6 +122,7 @@
     </footer>
     <div class="bar">
         <p>hello 👋🏽</p>
-    </div>
+    </div> -->
+    <script src="app.js"></script>
 </body>
 </html>

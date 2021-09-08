@@ -11,50 +11,60 @@
 
 <body>
     
-<div class="wrapper">
+<div>
     <header>
-        <h1><a href="#">jakedesign.io</a></h1>
-        <nav tabindex="0">
-            <a href="#" class="nav__toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <ul role="menubar" aria-haspopup="true">
-                <li role="menuitem" aria-label="Work" class="active">
-                    <a href="/">Work <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
-                </li>
-                <li role="menuitem" aria-label="About Me" class="not-active">
-                    <a href="#">About <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
-                </li>
-                <li role="menuitem" aria-label="Resume" class="not-active">
-                    <a href="/">Resume <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
-                </li>
-                <li role="menuitem" aria-label="Contact" class="not-active">
-                    <a href="/">Contact <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <div class="emoji">
-            <div class="circle">
-                <img src="./images/emoji_peace.svg" alt="">
+        <div class="nav-wrapper container">
+            <div class="logo"><a href="#">jakedesign.io</a></div>
+            <nav tabindex="0">
+                <a href="#" class="nav__toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <ul role="menubar" aria-haspopup="true">
+                    <li role="menuitem" aria-label="Work" class="active">
+                        <a href="/">Work <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
+                        <ul class="dropdown__menu">
+                            <li><a href="#">Department Of Energy</a></li>
+                            <li><a href="#">Munch</a></li>
+                            <li><a href="#">Play it Forward</a></li>
+                            <li><a href="#">Momentum</a></li>
+                        </ul>
+                    </li>
+                    <li role="menuitem" aria-label="About Me" class="not-active">
+                        <a href="#">About <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
+                    </li>
+                    <li role="menuitem" aria-label="Resume" class="not-active">
+                        <a href="/">Resume <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
+                    </li>
+                    <li role="menuitem" aria-label="Contact" class="not-active">
+                        <a href="/">Contact <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <section class="container">
+            <div class="emoji">
+                <div class="circle">
+                    <img src="./images/emoji_peace.png" alt="">
+                </div>
             </div>
-        </div>
-        <div class="title">
-            <h2>A budding UX/UI designer with a passion for creating <b>meaningful</b>, <b>intuitive</b>, and <b>purposeful</b> design experiences!</h2>
-        </div>
-        <div class="hover-btn">
-            <button>
-                Tap Me
-            </button>
-        </div>
-        <div class="down-arrow animated bounce">
-            <img src="images/arrow-down.svg" alt="">
-        </div>
-    </section>
+            <div class="title">
+                <h2>A budding UX/UI designer with a passion for creating <b>meaningful</b>, <b>intuitive</b>, and <b>purposeful</b> design experiences!</h2>
+            </div>
+            <div class="hover-btn">
+                <button>
+                    Tap Me
+                </button>
+            </div>
+            <div class="down-arrow animated bounce">
+                <img src="images/arrow-down.svg" alt="">
+            </div>
+        </section>
+    </header>
+    
     <main>
-        <div class="banner"></div>
+        <h4>Work</h4>
+        <div class="banner">Hi</div>
         <div class="post"></div>
         <div class="post"></div>
         <div class="post"></div>

@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: #d8d8d8;
+  font-size: 1.6rem;
+  color: #3659ba;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: #3659ba;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  width: calc(100% - 5rem);
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3.5rem 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+nav {
+  position: relative;
+}
+
+nav .nav__toggle {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 4rem;
+  height: 1.5rem;
+  top: -0.7rem;
+  right: 0rem;
+}
+
+nav .nav__toggle .bar {
+  height: 0.3rem;
+  width: 100%;
+  background-color: #3659ba;
+}
+
+nav ul {
+  display: none;
+}
+
+nav img {
+  width: 1.6rem;
+}
+
+section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+section .emoji {
+  border: 0.15rem solid #3659ba;
+  border-radius: 50%;
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+  margin: 4rem 0 2rem 0;
+}
+
+section .emoji img {
+  position: absolute;
+  right: -0.6rem;
+  bottom: 0.1rem;
+  height: 9rem;
+}
+
+section .title {
+  margin-top: 1rem;
+}
+
+section .title h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 3.8rem;
+}
+
+section .hover-btn button {
+  background: transparent;
+  border: 1px solid;
+  width: 100%;
+  height: 4.6rem;
+  font-size: 1.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  color: #3659ba;
+  margin-top: 10rem;
+}
+
+section .down-arrow {
+  margin-top: 15rem;
+}
+
+section .down-arrow img {
+  height: 5rem;
+  bottom: 20;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+/*# sourceMappingURL=style2.css.map */

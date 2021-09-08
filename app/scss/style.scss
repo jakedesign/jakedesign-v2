@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-$color-primary: #375BBB;
-$color-secondary: #FAFAFA;
-$drop-down-hover: #E1E1E1;
-$background-primary: #E6E6E6;
-$background-secondary: #ffffff;
+$color-primary: hsl(224, 55%, 47%);
+$color-secondary: hsl(0, 0%, 98%);
+$drop-down-hover: hsl(0, 0%, 88%);
+$background-primary: hsl(0, 0%, 90%);
+$background-secondary: hsl(0, 0%, 100%);
+$background-hover: hsla(224, 55%, 47%, 0.10);
+$breakpoint-desktop: 1440px;
+$breakpoint-tablet: 680px;
+$breakpoint-mobile: 414px;
 
 // UTILITIES 
 *,
@@ -61,11 +65,28 @@ html {
         grid-template-columns: 1.2fr 0.8fr;
         grid-template-rows: 0.4fr 2.1fr 0.4fr 1.1fr;
         grid-template-areas:
-            "nav nav"
-            "title emoji"
+            "nav    nav"
+            "title  emoji"
             "button button"
-            "arrow arrow"
+            "arrow  arrow"
         ;
+
+        @media screen and (max-width: 414px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 
+            0.3fr 
+            1fr 
+            1fr 
+            0.4fr 
+            1.1fr;
+            grid-template-areas:
+            "nav"
+            "emoji"
+            "title"
+            "button"
+            "arrow"
+        ;
+        }
 
         /////////////////////////////// NAV
 
@@ -135,6 +156,60 @@ html {
                 }
             }
         }
+        @media screen and (max-width: 414px) {
+            .nav {
+                &__list {
+                    &item {
+                         
+                         position: relative;
+                         padding: 2rem 0.5rem;
+                         cursor: pointer;
+                         &::after {
+                             content: "";
+                             width: 0%;
+                             height: 0.3rem;
+                             position: absolute;
+                             background-color: $color-primary;
+                             transition: width 250ms ease-in-out;
+                             bottom: 1.5rem;
+                             left: 0rem;
+                         }
+                         &:hover::after, &:focus::after {
+                             width: 100%;
+                         }
+                         &:hover ul, &:focus ul {
+                             opacity: 1;
+                             visibility: visible;
+                         }
+                         &drop {
+                             position: absolute;
+                             top: 5.9rem;
+                             left: -7.6rem;
+                             box-shadow: 0 0 25px rgba(44, 44, 44, 0.2);
+                             background-color: $background-secondary;
+                             padding: 1rem;
+                             width: 23.4rem;
+                             display: flex;
+                             flex-direction: column;
+                             gap: 0.5rem;
+                             opacity: 0;
+                             visibility: hidden;
+                             transition: opacity 400ms ease-in-out;
+                             li {
+                                 padding: 1rem 1rem;
+                                 transition: background-color 200ms ease-in-out;
+                                 &:hover, &:focus {
+                                     background-color: rgba(55, 90, 187, 0.2);
+                                 }
+                             }
+                             a {
+                                 width: 23rem;
+                             }
+                         }
+                     }
+                 }
+             }
+        }
         .nav__listitem, .nav__arrow {
             transition: 300ms ease-in-out;
             &:hover .nav__arrow {
@@ -175,6 +250,9 @@ html {
                 font-size: clamp(3.4rem, 3.4vw, 5rem);
                 font-weight: 300;
                 line-height: 1.6;
+            }
+            b {
+                font-weight: 700;
             }
         }
         // EMOJI
@@ -601,183 +679,3 @@ footer {
   .bounce {
     animation-name: bounce;
   }
-
-//////////////////////////////////////////////////   MEDIA QUERY
-
-@media (max-width: 1024px) {
-    .landing-page  {
-        .landing-grid {
-            .emoji {
-                 .circle {
-                     min-height: 35rem;
-                     min-width: 35rem;
-                     background-position: 3.1rem 2.3rem;
-                     background-size: 32rem;
-                 }    
-            }
-        }
-    } 
-}
-@media (max-width: 999px) {
-    .landing-page  {
-        .landing-grid {
-            .emoji {
-                 .circle {
-                     min-height: 32rem;
-                     min-width: 32rem;
-                     background-position: 3.1rem 2.3rem;
-                     background-size: 29rem;
-                 }    
-            }
-        }
-    } 
-}
-@media (max-width: 935px) {
-    .landing-page  {
-        .landing-grid {
-            .title {
-                h2 {
-                    font-size: clamp(2.8rem, 3.4vw, 5rem);
-                }
-            }
-            .emoji {
-                 .circle {
-                     min-height: 30rem;
-                     min-width: 30rem;
-                     background-position: 3.1rem 2.3rem;
-                     background-size: 27rem;
-                 }    
-            }
-        }
-    } 
-}
-@media (max-width: 790px) {
-    .landing-page  {
-        .landing-grid {
-            .nav {
-                grid-area: none;
-                position: absolute;
-                left: 0rem;
-                width: 100%;
-                font-size: 1.8rem;
-                &__list {
-                    justify-content: flex-start;
-                    flex-direction: column;
-                    gap: 2rem;
-                    margin: 2rem 0rem;
-                    height: 100vh;
-                    background-color: none;
-                    &logo {
-                        padding: 2rem;
-                        transition: none;
-                        &:hover {
-                            color: none;
-                        }
-                    }
-                    &item {
-                        display: none;
-                        padding: 1rem;
-                        margin: 5rem 0;
-                        cursor: pointer;
-                        &::after {
-                            width: 0;
-                        }
-                        &:hover::after, &:focus::after {
-                            width: 0;
-                        }
-                        &:hover ul, &:focus ul {
-                            opacity: 0;
-                            visibility: hidden;
-                        }
-                        &drop {
-                            display: none;
-                        }
-                    }
-                }
-            }
-            .title {
-                h2 {
-                    font-size: clamp(2.4rem, 3.4vw, 5rem);
-                }
-            }
-            .emoji {
-                 .circle {
-                     min-height: 26rem;
-                     min-width: 26rem;
-                     background-position: 2.5rem 2rem;
-                     background-size: 24rem;
-                 }    
-            }
-            .nav__listitem, .nav__arrow {
-                transition: none;
-                &:hover .nav__arrow {
-                    transform: none;
-                }
-            }
-            .nav__toggle {
-                visibility: visible;
-                opacity: 1;
-            }
-        }
-    } 
-}
-
-
-
-
-
-@media (max-width: 691px) {
-    .landing-page  {
-        .landing-grid {
-            grid-gap: 0.5rem;
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.4fr 0.8fr 0.8fr 0.5fr 1fr;
-            grid-template-areas:
-                "nav"
-                "emoji"
-                "title"
-                "button"
-                "arrow"
-            ;
-            // TITLE
-            .title {
-                padding: 1rem;
-                h2 {
-                    font-size: clamp(2.4rem, 3.4vw, 5rem);
-                }
-            }
-            // EMOJI
-            .emoji {
-                padding: 1rem;
-                justify-content: center;
-                align-items: center;
-                 .circle {
-                     min-height: 17rem;
-                     min-width: 17rem;
-                     background-image: url(/images/emoji_peace.svg);
-                     background-position: 1.9rem 1.6rem;
-                     background-repeat: no-repeat;
-                     background-size: 15rem;
-                 }    
-            }
-            // HOVER BUTTON
-            .hover-btn {
-                justify-content: center;
-                align-items: center;
-                border-bottom: none;
-                button {
-                    padding: 2rem 5rem;
-                    width: 100%;
-                    margin-bottom: none;
-                }
-            }
-            // DROPDOWN BUTTON
-            .down-arrow {
-                padding-top: 1rem;
-                img {
-                    height: 3rem;
-                }
-            }
-        }
-    } 
-}

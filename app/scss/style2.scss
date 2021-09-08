@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+$color-primary: hsl(224, 55%, 47%);
+$color-secondary: hsl(0, 0%, 98%);
+$drop-down-hover: hsl(0, 0%, 88%);
+$background-primary: hsl(0, 0%, 90%);
+$background-secondary: hsl(0, 0%, 100%);
+$background-hover: hsla(224, 55%, 47%, 0.10);
+$font-primary: 'Space Grotesk', sans-serif;
+
+// UTILITIES 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background: rgb(216, 216, 216);
+    font-size: 1.6rem;
+    color: $color-primary;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: $color-primary;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+// MAIN
+
+.wrapper {
+    width: calc(100% - 5rem);
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem 0;
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}
+
+nav {
+    position: relative;
+    .nav__toggle {
+        position: absolute;
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 4rem;
+        height: 1.5rem;
+        top: -0.7rem;
+        right: 0rem;
+        .bar {
+            height: 0.3rem;
+            width: 100%;
+            background-color: $color-primary;
+        }
+    }
+    ul {
+        display: none;
+    }
+    img {
+        width: 1.6rem;
+    }
+    
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    .emoji {
+        border: 0.15rem solid $color-primary;
+        border-radius: 50%;
+        position: relative;
+        height: 10rem;
+        width: 10rem;
+        margin: 4rem 0 2rem 0;
+        img {
+            position: absolute;
+            right: -0.6rem;
+            bottom: 0.1rem;
+            height: 9rem;
+        }
+    }
+    .title {
+        margin-top: 1rem;
+        h2 {
+            font-weight: 300;
+            font-size: 2rem;
+            line-height: 3.8rem;
+        }
+    }
+    .hover-btn button {
+        background: transparent;
+        border: 1px solid;
+        width: 100%;
+        height: 4.6rem;
+        font-size: 1.8rem;
+        font-family: $font-primary;
+        font-weight: 300;
+        color: $color-primary;
+        margin-top: 10rem;
+    }
+    .down-arrow {
+        margin-top: 15rem;
+        img {
+            height: 5rem;
+            
+            bottom: 20;
+
+        }
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+footer {
+
+}

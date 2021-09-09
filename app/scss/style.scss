@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400&display=swap');
 
 $color-primary: hsl(224, 55%, 47%);
 $color-secondary: hsl(0, 0%, 98%);
+$color-lightblue: hsl(225, 50%, 92%);
 $drop-down-hover: hsl(0, 0%, 88%);
 $background-primary: hsl(0, 0%, 90%);
 $background-secondary: hsl(0, 0%, 100%);
@@ -9,6 +11,8 @@ $background-hover: hsla(224, 55%, 47%, 0.10);
 $breakpoint-desktop: 1440px;
 $breakpoint-tablet: 680px;
 $breakpoint-mobile: 414px;
+$font-primary: 'Space Grotesk', sans-serif;
+$font-secondary: 'Work Sans', sans-serif;
 
 // UTILITIES 
 *,
@@ -22,7 +26,7 @@ $breakpoint-mobile: 414px;
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: $font-primary;
     background-color: $background-secondary;
     font-size: 1.6rem;
     color: $color-primary;
@@ -45,15 +49,28 @@ html {
     box-sizing: border-box;
 }
 
+.container {
+    width: calc(100% - 10rem);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 /////////////////////////////////////////////////////////////// LANDING PAGE
 
 .landing__page {
     height: 100vh;
     background: $background-primary;
     .landing__grid {
-        width: calc(100% - 10rem);
-        max-width: 1440px;
-        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.7fr 1fr;
+        grid-template-rows: 10vh 50vh 10vh 30vh;
+        grid-template-areas: 
+        "nav    nav"
+        "title  emoji"
+        "btn    btn"
+        "arrow  arrow";
+        grid-gap: 0.5rem;
+        
     }
 }
 
@@ -104,6 +121,7 @@ nav {
                 flex-direction: column;
                 justify-content: center;
                 background: $background-secondary;
+                box-shadow: 0 0 6rem hsla(0, 0%, 0%, 0.07);
                 width: 25.7rem;
                 padding: 1rem;
                 gap: 0.1rem;
@@ -140,27 +158,57 @@ nav {
             transform: rotate(90deg);
         }
     }
-    .nav__toggle {
-        position: absolute;
-        display: flex;
+    label {
         visibility: hidden;
         opacity: 0;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 4rem;
-        height: 1.8rem;
-        top: 0rem;
-        right: 0rem;
-        .bar {
+        width: 5rem;
+        height: 5.5rem;
+        background-color: transparent;
+        position: absolute;
+        cursor: pointer;
+        top: 2.5rem;
+        &::after,
+        &::before {
+            content: "";
+            width: 5rem;
             height: 0.3rem;
-            width: 100%;
             background-color: $color-primary;
+            position: absolute;
+            display: block;
+            transition: all 400ms cubic-bezier(1,0,0,1);
+        }
+        &::before {
+            top: 1.6rem;
+            left: 0%;
+            transform-origin: center;
+            transform: rotate(0deg)
+        }
+        &::after {
+            bottom: 1.8rem;
+            left: 0%;
+            transform-origin: center;
+            transform: rotateZ(0deg);
         }
     }
-
+    #toggle:checked ~ label::before {
+        transform: rotateZ(31deg);
+        top: 2.5rem;
+        left: 0%;
+    }
+    #toggle:checked ~ label::after {
+        transform: rotateZ(-31deg);
+        bottom: 2.6rem;
+        left: 0%;
+    }
+    #toggle ~ label {
+        transition: all 300ms cubic-bezier(1,0,0,1);
+    }
+    input {
+        display: none;
+    }
     @media screen and (max-width: 1024px) {
         .nav__list {
-            display: flex;
+            display: none;
             flex-direction: column;
             background: $background-secondary;
             position: absolute;
@@ -170,6 +218,8 @@ nav {
             width: 100%;
             height: 90vh;
             font-size: 3rem;
+            opacity: 0;
+            visibility: hidden;
             &item {
                 margin: 4rem 0;
                 padding: 0rem;
@@ -200,19 +250,180 @@ nav {
                 transform: rotate(0deg);
             }
         }
-        .nav__toggle {
+        
+        label {
             visibility: visible;
             opacity: 1;
-            width: 4rem;
-            height: 1.8rem;
-            top: 2.3rem;
+            width: 5rem;
+            height: 5.5rem;
+            background-color: transparent;
+            position: absolute;
+            cursor: pointer;
+            top: 0.6rem;
             right: 0rem;
-            .bar {
+            &::after,
+            &::before {
+                content: "";
+                width: 5rem;
                 height: 0.3rem;
-                width: 100%;
                 background-color: $color-primary;
+                position: absolute;
+                display: block;
+                transition: all 400ms cubic-bezier(1,0,0,1);
             }
+            &::before {
+                top: 1.6rem;
+                left: 0%;
+                transform-origin: center;
+                transform: rotate(0deg)
+            }
+            &::after {
+                bottom: 1.8rem;
+                left: 0%;
+                transform-origin: center;
+                transform: rotateZ(0deg);
+            }
+        }
+        .nav__checkbox:checked ~ ul.nav__list{
+            display: flex;
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
+.hero__title {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    h2 {
+        padding: 12rem 0;
+        font-weight: 300;
+        font-size: 5.3rem;
+        line-height: 7.2rem;
+    }
+    .hero__titlemain {
+        display: block;
+    }
+    .hero__titlesecondary {
+        display: none;
+    }
+}
+.hero__emoji {
+    grid-area: emoji;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .circle {
+        height: 40rem;
+        width: 40rem;
+        border: 1px solid $color-primary;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 23rem;
+        }
+    }
+}
+.hero__btn {
+    grid-area: btn;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid $color-primary;
+    button {
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        padding: 2rem 5rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        font-family: 'Space Grotesk', sans-serif;
+        color: $color-primary;
+        margin-bottom: -0.1rem;
+    }
+}
+.hero__arrow {
+    grid-area: arrow;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 3.5rem;
+    img {
+        width: 3.5rem;
+    }
+}
+
+main {
+    h4 {
+        font-size: 10rem;
+        font-weight: 300;
+        padding: 17rem 0 10rem 0;
+    }
+    .project__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 5rem;
+        row-gap: 10rem;
+        .project__image {
+            height: 40rem;
+            background-color: $color-lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 6rem hsla(0, 0%, 0%, 0.07);
+            img {
+                width: 50rem;
+            }
+        }
+        .project__info {
+            display: grid;
+            grid-template-rows: 0.5fr 0.5fr 1.5fr;
+            h5 {
+                justify-self: start;
+                align-self: flex-start;
+                font-size: 5.5rem;
+                font-weight: 300;
+            }
+            p {
+                justify-self: start;
+                align-self: flex-start;
+                font-size: 2.2rem;
+                font-weight: 300;
+                font-family: $font-secondary;
+                line-height: 3.8rem;
+        
+            }
+            button {
+                justify-self: start;
+                align-self: flex-end;
+                background-color: transparent;
+                border: 1px solid $color-primary;
+                background-image: url(/images/arrow-angle.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 3rem;
+                padding: 3rem;
+                height: 10rem;
+                width: 10rem;
+                img {
+                    width: 3rem;
+                    opacity: 0;
+                }
+                &:hover, 
+                &:active {
+                    background-color: $color-primary;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    img {
+                        opacity: 1;
+                    }
+                }
+            }
+            
+        }
+       
+    }
+}
+
 

@@ -263,7 +263,7 @@ nav input {
             justify-content: center;
     top: 7rem;
     width: 100%;
-    height: 92vh;
+    height: 90vh;
     font-size: 3rem;
     opacity: 0;
     visibility: hidden;
@@ -554,8 +554,15 @@ nav input {
 }
 
 @media screen and (max-width: 414px) {
+  .landing__page .landing__grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 8vh 26vh 32vh 10vh 20vh;
+        grid-template-rows: 8vh 26vh 32vh 10vh 20vh;
+        grid-template-areas: "nav" "emoji" "title" "btn" "arrow";
+  }
   .hero__title {
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: title;
     display: -webkit-box;
@@ -579,7 +586,7 @@ nav input {
   }
   .hero__emoji {
     -ms-grid-row: 2;
-    -ms-grid-column: 2;
+    -ms-grid-column: 1;
     grid-area: emoji;
   }
   .hero__emoji .circle {
@@ -865,49 +872,50 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
 
 @media screen and (max-width: 414px) {
   main h4 {
-    font-size: 7.5rem;
-    padding: 8rem 0 6rem 0;
+    font-size: 5.5rem;
+    padding: 6rem 0 4rem 0;
   }
   main .project__grid {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 0.4fr 0.3fr 0.4fr 0.3fr;
-        grid-template-rows: 0.4fr 0.3fr 0.4fr 0.3fr;
+    -ms-grid-rows: 0.4fr 0.3fr;
+        grid-template-rows: 0.4fr 0.3fr;
     row-gap: 1rem;
   }
   main .project__grid .project__image {
-    height: 20rem;
+    height: 23rem;
   }
   main .project__grid .project__image img {
-    width: 20rem;
+    width: 30rem;
     padding: 1rem;
   }
   main .project__grid .project__info {
     display: -ms-grid;
     display: grid;
-    margin-bottom: 13rem;
-    -ms-grid-rows: 7rem 1.2fr 1fr;
-        grid-template-rows: 7rem 1.2fr 1fr;
+    margin-bottom: 6rem;
+    -ms-grid-rows: 4rem 1fr 8rem;
+        grid-template-rows: 4rem 1fr 8rem;
   }
   main .project__grid .project__info h5 {
     -ms-grid-column-align: start;
         justify-self: start;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 2.4rem;
+    font-size: 2.9rem;
     font-weight: 300;
   }
   main .project__grid .project__info p {
     -ms-grid-column-align: start;
         justify-self: start;
+    padding-top: 0.8rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
     font-family: "Work Sans", sans-serif;
-    line-height: 3.8rem;
+    line-height: 2.9rem;
   }
   main .project__grid .project__info button {
     justify-self: start;
@@ -918,9 +926,9 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
     background-image: url(/images/arrow-angle.svg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 3rem;
+    background-size: 2.4rem;
     padding: 3rem;
-    height: 8rem;
+    height: 6rem;
     width: 100%;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
@@ -935,7 +943,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
             align-items: center;
   }
   main .project__grid .project__info button img {
-    width: 3.1rem;
+    width: 2.4rem;
     opacity: 0;
   }
   main .project__grid .project__info button:hover, main .project__grid .project__info button:active {

@@ -63,7 +63,7 @@ html {
     .landing__grid {
         display: grid;
         grid-template-columns: 1.7fr 1fr;
-        grid-template-rows: 10vh 50vh 10vh 30vh;
+        grid-template-rows: 10vh 50vh 5vh 35vh;
         grid-template-areas: 
         "nav    nav"
         "title  emoji"
@@ -72,6 +72,9 @@ html {
         grid-gap: 0.5rem;
     }
 }
+
+// NAV
+
 nav {
     grid-area: nav;
     position: relative;
@@ -293,7 +296,7 @@ nav {
     display: flex;
     align-items: center;
     h2 {
-        padding: 5rem 0;
+        padding: 2rem 0;
         font-weight: 300;
         font-size: 5.3rem;
         line-height: 7.2rem;
@@ -302,7 +305,10 @@ nav {
         display: block;
     }
     .hero__titlesecondary {
+        opacity: 0;
+        visibility: hidden;
         display: none;
+        transition: all 500ms ease-in-out;
     }
 }
 .hero__emoji {
@@ -326,26 +332,26 @@ nav {
         }
     }
 }
-.hero__btn {
+#button {
     grid-area: btn;
-    display: flex;
-    align-items: flex-end;
-    border-bottom: 1px solid $color-primary;
-    button {
-        background-color: transparent;
-        border: 1px solid $color-primary;
-        padding: 2rem 5rem;
-        font-size: 1.8rem;
-        font-weight: 400;
-        font-family: 'Space Grotesk', sans-serif;
-        color: $color-primary;
-        margin-bottom: -0.1rem;
-        &:hover {
-            background-color: $color-primary;
-            color: white;
-        }
+    height: 6rem;
+    width: 20rem;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-primary;
+    background: transparent;
+    font-family: $font-primary;
+    font-size: 1.8rem;
+    color: $color-primary;
+    transition: 250ms ease-in-out;
+    z-index: 1;
+    &:hover {
+        background: $color-primary;
+        color: $color-secondary
     }
 }
+
 .hero__arrow {
     grid-area: arrow;
     display: flex;
@@ -357,6 +363,26 @@ nav {
         width: 3.5rem;
     }
 }
+
+#button:hover ~ #title {
+    .hero__titlemain {
+        display: none;
+    }
+    .hero__titlesecondary {
+        display: block;
+        
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.line {
+    grid-area: btn;
+    border-bottom: 1px solid $color-primary;
+    z-index: 0;
+}
+
+
 @media screen and (max-width: 1024px) {
     .landing__page {
         .landing__grid {

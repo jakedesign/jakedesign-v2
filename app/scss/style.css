@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400&display=swap");
+:root {
+  --fs-hero: 5.3rem;
+  --fs-xl-header: 10rem;
+  --fs-header: 5.5rem;
+  --fs-paragraph: 2.2rem;
+  --fs-links: 2.4rem;
+  --fs-body: 1.8rem;
+  --fs-small: 1.6rem;
+  --fs-footer: 1.8rem;
+}
+
 *,
 *::before,
 *::after {
@@ -14,12 +25,11 @@ body {
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
   background-color: white;
-  font-size: 1.6rem;
   color: #3659ba;
 }
 
 h1, h2, h3, h4 {
-  margin: 1;
+  margin: 0;
 }
 
 li {
@@ -75,7 +85,7 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem 0;
-  font-size: 1.8rem;
+  font-size: var(--fs-body);
   font-weight: 400;
 }
 
@@ -358,7 +368,7 @@ nav input {
 .hero__title h2 {
   padding: 2rem 0;
   font-weight: 300;
-  font-size: 5.3rem;
+  font-size: var(--fs-hero);
   line-height: 7.2rem;
 }
 
@@ -432,7 +442,7 @@ nav input {
   border: 1px solid #3659ba;
   background: transparent;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1.8rem;
+  font-size: var(--fs-body);
   color: #3659ba;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
@@ -492,7 +502,7 @@ nav input {
         grid-template-rows: 4.5vh 54.5vh 10vh 30vh;
   }
   .hero__title h2 {
-    font-size: 3.3rem;
+    font-size: var(--fs-hero);
   }
   .hero__emoji .circle {
     height: 37rem;
@@ -515,7 +525,7 @@ nav input {
         grid-template-rows: 6vh 52vh 10vh 30vh;
   }
   .hero__title h2 {
-    font-size: 2.4rem;
+    font-size: var(--fs-hero);
     line-height: 5rem;
   }
   .hero__emoji .circle {
@@ -537,7 +547,7 @@ nav input {
   }
   .hero__title h2 {
     padding: 2rem 0;
-    font-size: 3.9rem;
+    font-size: var(--fs-hero);
     line-height: 5.9rem;
   }
   .hero__emoji {
@@ -598,7 +608,7 @@ nav input {
   .hero__title h2 {
     padding: 1rem 0;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: var(--fs-hero);
     line-height: 4.2rem;
   }
   .hero__title .hero__titlemain {
@@ -637,7 +647,7 @@ nav input {
 }
 
 main h4 {
-  font-size: 10rem;
+  font-size: var(--fs-xl-header);
   font-weight: 300;
   padding: 17rem 0 10rem 0;
 }
@@ -686,7 +696,7 @@ main .project__grid .project__info h5 {
       justify-self: start;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  font-size: 5.5rem;
+  font-size: var(--fs-header);
   font-weight: 300;
 }
 
@@ -695,7 +705,7 @@ main .project__grid .project__info p {
       justify-self: start;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  font-size: 2.2rem;
+  font-size: var(--fs-paragraph);
   font-weight: 300;
   font-family: "Work Sans", sans-serif;
   line-height: 3.8rem;
@@ -745,7 +755,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
 
 @media screen and (max-width: 1024px) {
   main h4 {
-    font-size: 9rem;
+    font-size: var(--fs-xl-header);
     padding: 10rem 0 8rem 0;
   }
   main .project__grid {
@@ -766,16 +776,16 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
         grid-template-rows: 6rem 20rem 1fr;
   }
   main .project__grid .project__info h5 {
-    font-size: 4rem;
+    font-size: var(--fs-header);
   }
   main .project__grid .project__info p {
-    font-size: 2.1rem;
+    font-size: var(--fs-paragraph);
   }
 }
 
 @media screen and (max-width: 768px) {
   main h4 {
-    font-size: 8rem;
+    font-size: var(--fs-xl-header);
     padding: 8rem 0 6rem 0;
   }
   main .project__grid {
@@ -795,10 +805,10 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
         grid-template-rows: 4rem 17rem 1fr;
   }
   main .project__grid .project__info h5 {
-    font-size: 2.9rem;
+    font-size: var(--fs-xl-header);
   }
   main .project__grid .project__info p {
-    font-size: 2rem;
+    font-size: var(--fs-header);
     line-height: 3.3rem;
   }
   main .project__grid .project__info button {
@@ -809,7 +819,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
 
 @media screen and (max-width: 724px) {
   main h4 {
-    font-size: 7.5rem;
+    font-size: var(--fs-xl-header);
     padding: 8rem 0 6rem 0;
   }
   main .project__grid {
@@ -840,7 +850,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
         justify-self: start;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 5rem;
+    font-size: var(--fs-header);
     font-weight: 300;
   }
   main .project__grid .project__info p {
@@ -848,7 +858,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
         justify-self: start;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 2rem;
+    font-size: var(--fs-paragraph);
     font-weight: 300;
     font-family: "Work Sans", sans-serif;
     line-height: 3.8rem;
@@ -895,7 +905,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
 
 @media screen and (max-width: 414px) {
   main h4 {
-    font-size: 5.5rem;
+    font-size: var(--fs-xl-header);
     padding: 6rem 0 4rem 0;
   }
   main .project__grid {
@@ -926,7 +936,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
         justify-self: start;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 2.9rem;
+    font-size: var(--fs-header);
     font-weight: 300;
   }
   main .project__grid .project__info p {
@@ -935,7 +945,7 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
     padding-top: 0.8rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 1.8rem;
+    font-size: var(--fs-paragraph);
     font-weight: 300;
     font-family: "Work Sans", sans-serif;
     line-height: 2.9rem;
@@ -999,7 +1009,7 @@ footer .footer__grid .say-hello {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: contact;
-  font-size: 2.4rem;
+  font-size: var(--fs-links);
   font-weight: 400;
   padding: 8rem 0 3rem 0;
   justify-self: flex-start;
@@ -1012,7 +1022,7 @@ footer .footer__grid .say-hello img {
 }
 
 footer .footer__grid .up {
-  font-size: 2.4rem;
+  font-size: var(--fs-links);
   font-weight: 400;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -1041,7 +1051,7 @@ footer .footer__grid .line {
 }
 
 footer .footer__grid .social {
-  font-size: 1.8rem;
+  font-size: var(--fs-footer);
   font-weight: 400;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -1057,7 +1067,7 @@ footer .footer__grid .social {
 }
 
 footer .footer__grid .page-info {
-  font-size: 1.8rem;
+  font-size: var(--fs-footer);
   font-weight: 400;
   -ms-grid-row: 3;
   -ms-grid-column: 2;
@@ -1106,28 +1116,28 @@ footer .footer__grid .page-info .selfcoded {
         grid-template-rows: 10rem 2rem 8rem;
   }
   footer .footer__grid .say-hello {
-    font-size: 2.1rem;
+    font-size: var(--fs-links);
     padding: 5rem 0 0 0;
   }
   footer .footer__grid .say-hello img {
     width: 1.5rem;
   }
   footer .footer__grid .up {
-    font-size: 2.1rem;
+    font-size: var(--fs-links);
     padding: 5rem 0 0 0;
   }
   footer .footer__grid .up img {
     width: 1.5rem;
   }
   footer .footer__grid .social {
-    font-size: 1.4rem;
+    font-size: var(--fs-footer);
     padding: 0.8rem 0;
   }
   footer .footer__grid .social img {
     width: 1rem;
   }
   footer .footer__grid .page-info {
-    font-size: 1.4rem;
+    font-size: var(--fs-footer);
     gap: 1rem;
     padding: 0 0;
   }
@@ -1154,7 +1164,7 @@ footer .footer__grid .page-info .selfcoded {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: hi;
-    font-size: 2.1rem;
+    font-size: var(--fs-links);
     padding: 6rem 0 0 0;
   }
   footer .footer__grid .say-hello img {
@@ -1164,7 +1174,7 @@ footer .footer__grid .page-info .selfcoded {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: up;
-    font-size: 2.1rem;
+    font-size: var(--fs-links);
     padding: 6rem 0 0 0;
   }
   footer .footer__grid .up img {
@@ -1182,7 +1192,7 @@ footer .footer__grid .page-info .selfcoded {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: social;
-    font-size: 1.8rem;
+    font-size: var(--fs-footer);
     padding: 0;
   }
   footer .footer__grid .social img {
@@ -1206,7 +1216,7 @@ footer .footer__grid .page-info .selfcoded {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: copy;
-    font-size: 1.6rem;
+    font-size: var(--fs-footer);
     gap: 1rem;
     padding: 0.5rem 0 0 0;
   }

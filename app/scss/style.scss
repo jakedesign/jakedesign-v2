@@ -14,6 +14,19 @@ $breakpoint-mobile: 414px;
 $font-primary: 'Space Grotesk', sans-serif;
 $font-secondary: 'Work Sans', sans-serif;
 
+:root {
+    --fs-hero: 5.3rem;
+    --fs-xl-header: 10rem;
+    --fs-header: 5.5rem;
+    --fs-paragraph: 2.2rem;
+    --fs-links: 2.4rem;
+    --fs-body: 1.8rem;
+    --fs-small: 1.6rem;
+    --fs-footer: 1.8rem;
+}
+
+
+
 // UTILITIES 
 *,
 *::before,
@@ -28,11 +41,10 @@ body {
     padding: 0;
     font-family: $font-primary;
     background-color: $background-secondary;
-    font-size: 1.6rem;
     color: $color-primary;
 }
 h1, h2, h3, h4 {
-    margin: 1;
+    margin: 0;
 }
 
 li {
@@ -82,7 +94,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 0;
-    font-size: 1.8rem;
+    font-size: var(--fs-body);
     font-weight: 400;
     .nav__logo {
         a {
@@ -298,7 +310,7 @@ nav {
     h2 {
         padding: 2rem 0;
         font-weight: 300;
-        font-size: 5.3rem;
+        font-size: var(--fs-hero);
         line-height: 7.2rem;
     }
     .hero__titlemain {
@@ -342,7 +354,7 @@ nav {
     border: 1px solid $color-primary;
     background: transparent;
     font-family: $font-primary;
-    font-size: 1.8rem;
+    font-size: var(--fs-body);
     color: $color-primary;
     transition: 250ms ease-in-out;
     z-index: 1;
@@ -382,7 +394,6 @@ nav {
     z-index: 0;
 }
 
-
 @media screen and (max-width: 1024px) {
     .landing__page {
         .landing__grid {
@@ -391,7 +402,7 @@ nav {
     }
     .hero__title {
         h2 {
-            font-size: 3.3rem;
+            font-size: var(--fs-hero);
         }
     }
     .hero__emoji {
@@ -418,7 +429,7 @@ nav {
     }
     .hero__title {
         h2 {
-            font-size: 2.4rem;
+            font-size: var(--fs-hero);
             line-height: 5rem;
         }
     }
@@ -448,7 +459,7 @@ nav {
     .hero__title {
         h2 {
             padding: 2rem 0;
-            font-size: 3.9rem;
+            font-size: var(--fs-hero);
             line-height: 5.9rem;
         }
     }
@@ -499,7 +510,7 @@ nav {
         h2 {
             padding: 1rem 0;
             font-weight: 300;
-            font-size: 2rem;
+            font-size: var(--fs-hero);
             line-height: 4.2rem;
         }
         .hero__titlemain {
@@ -531,7 +542,7 @@ nav {
 
 main {
     h4 {
-        font-size: 10rem;
+        font-size: var(--fs-xl-header);
         font-weight: 300;
         padding: 17rem 0 10rem 0;
     }
@@ -559,13 +570,13 @@ main {
             h5 {
                 justify-self: start;
                 align-self: flex-start;
-                font-size: 5.5rem;
+                font-size: var(--fs-header);
                 font-weight: 300;
             }
             p {
                 justify-self: start;
                 align-self: flex-start;
-                font-size: 2.2rem;
+                font-size: var(--fs-paragraph);
                 font-weight: 300;
                 font-family: $font-secondary;
                 line-height: 3.8rem;
@@ -606,7 +617,7 @@ main {
     }
     @media screen and (max-width: 1024px) {
         h4 {
-            font-size: 9rem;
+            font-size: var(--fs-xl-header);
             padding: 10rem 0 8rem 0;
         }
         .project__grid {
@@ -623,17 +634,17 @@ main {
                 display: grid;
                 grid-template-rows: 6rem 20rem 1fr;
                 h5 {
-                    font-size: 4rem;
+                    font-size: var(--fs-header);
                 }
                 p {
-                    font-size: 2.1rem;
+                    font-size: var(--fs-paragraph);
                 }
             }
         }
     }
     @media screen and (max-width: 768px) {
         h4 {
-            font-size: 8rem;
+            font-size: var(--fs-xl-header);
             padding: 8rem 0 6rem 0;
         }
         .project__grid {
@@ -649,10 +660,10 @@ main {
                 display: grid;
                 grid-template-rows: 4rem 17rem 1fr;
                 h5 {
-                    font-size: 2.9rem;
+                    font-size: var(--fs-xl-header);
                 }
                 p {
-                    font-size: 2rem;
+                    font-size: var(--fs-header);
                     line-height: 3.3rem;
                 }
                 button {
@@ -664,7 +675,7 @@ main {
     }
     @media screen and (max-width: 724px) {
         h4 {
-            font-size: 7.5rem;
+            font-size: var(--fs-xl-header);
             padding: 8rem 0 6rem 0;
         }
         .project__grid {
@@ -686,13 +697,13 @@ main {
                 h5 {
                     justify-self: start;
                     align-self: flex-start;
-                    font-size: 5rem;
+                    font-size: var(--fs-header);
                     font-weight: 300;
                 }
                 p {
                     justify-self: start;
                     align-self: flex-start;
-                    font-size: 2rem;
+                    font-size: var(--fs-paragraph);
                     font-weight: 300;
                     font-family: $font-secondary;
                     line-height: 3.8rem;
@@ -734,7 +745,7 @@ main {
     }
     @media screen and (max-width: 414px) {
         h4 {
-            font-size: 5.5rem;
+            font-size: var(--fs-xl-header);
             padding: 6rem 0 4rem 0;
         }
         .project__grid {
@@ -756,14 +767,14 @@ main {
                 h5 {
                     justify-self: start;
                     align-self: flex-start;
-                    font-size: 2.9rem;
+                    font-size: var(--fs-header);
                     font-weight: 300;
                 }
                 p {
                     justify-self: start;
                     padding-top: 0.8rem;
                     align-self: flex-start;
-                    font-size: 1.8rem;
+                    font-size: var(--fs-paragraph);
                     font-weight: 300;
                     font-family: $font-secondary;
                     line-height: 2.9rem;
@@ -817,7 +828,7 @@ footer {
         "social     copy";
         .say-hello {
             grid-area: contact;
-            font-size: 2.4rem;
+            font-size: var(--fs-links);
             font-weight: 400;
             padding: 8rem 0 3rem 0;
             justify-self: flex-start;
@@ -827,7 +838,7 @@ footer {
             }
         }
         .up {
-            font-size: 2.4rem;
+            font-size: var(--fs-links);
             font-weight: 400;
             grid-area: up;
             justify-self: flex-end;
@@ -845,7 +856,7 @@ footer {
             align-self: center;
         }
         .social {
-            font-size: 1.8rem;
+            font-size: var(--fs-footer);
             font-weight: 400;
             grid-area: social;
             display: flex;
@@ -855,7 +866,7 @@ footer {
             align-self: flex-start;
         }
         .page-info {
-            font-size: 1.8rem;
+            font-size: var(--fs-footer);
             font-weight: 400;
             grid-area: copy;
             display: flex;
@@ -886,28 +897,28 @@ footer {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 10rem 2rem 8rem;
             .say-hello {
-                font-size: 2.1rem;
+                font-size: var(--fs-links);
                 padding: 5rem 0 0 0;
                 img {
                     width: 1.5rem;
                 }
             }
             .up {
-                font-size: 2.1rem;
+                font-size: var(--fs-links);
                 padding: 5rem 0 0 0;
                 img {
                     width: 1.5rem;
                 }
             }
             .social {
-                font-size: 1.4rem;
+                font-size: var(--fs-footer);
                 padding: 0.8rem 0;
                 img {
                     width: 1rem;
                 }
             }
             .page-info {
-                font-size: 1.4rem;
+                font-size: var(--fs-footer);
                 gap: 1rem;
                 padding: 0 0;
                 img {
@@ -934,7 +945,7 @@ footer {
             "copy   .";
             .say-hello {
                 grid-area: hi;
-                font-size: 2.1rem;
+                font-size: var(--fs-links);
                 padding: 6rem 0 0 0;
                 img {
                     width: 1.5rem;
@@ -942,7 +953,7 @@ footer {
             }
             .up {
                 grid-area: up;
-                font-size: 2.1rem;
+                font-size: var(--fs-links);
                 padding: 6rem 0 0 0;
                 img {
                     width: 1.5rem;
@@ -953,7 +964,7 @@ footer {
                 gap: 1.2rem;
                 flex-direction: column;
                 grid-area: social;
-                font-size: 1.8rem;
+                font-size: var(--fs-footer);
                 padding: 0;
                 img {
                     width: 1.2rem;
@@ -967,7 +978,7 @@ footer {
                 align-items: flex-start;
                 flex-direction: column;
                 grid-area: copy;
-                font-size: 1.6rem;
+                font-size: var(--fs-footer);
                 gap: 1rem;
                 padding: 0.5rem 0 0 0;
                 img {

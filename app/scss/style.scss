@@ -25,6 +25,54 @@ $font-secondary: 'Work Sans', sans-serif;
     --fs-footer: 1.8rem;
 }
 
+@media screen and (max-width: 1370px) {
+    :root {
+        --fs-hero: clamp(3rem, 2.8vw + 1rem, 5.2rem) ;
+        --fs-xl-header: clamp(6.5rem, 9vw + 1rem, 10rem);
+        --fs-header: clamp(3rem, 2.7vw + 1rem, 5.5rem );
+        --fs-paragraph: clamp(2rem, 1.4vw + 1rem, 2.2rem);
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        --fs-footer: clamp(1.4rem, 0.6vw + 1rem, 1.8rem);
+    }
+}
+@media screen and (max-width: 1088px) {
+    :root {
+        --fs-hero: clamp(2.5rem, 2.3vw + 1rem, 3.5rem);
+        // --fs-xl-header: 10rem;
+        // --fs-header: 5.5rem;
+        // --fs-paragraph: 2.2rem;
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        // --fs-footer: 1.8rem;
+    }
+}
+@media screen and (max-width: 908px) {
+    :root {
+        --fs-hero: clamp(2.4rem, 1.8vw + 1rem, 3.1rem) ;
+        // --fs-xl-header: 10rem;
+        // --fs-header: 5.5rem;
+        // --fs-paragraph: 2.2rem;
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        // --fs-footer: 1.8rem;
+    }
+}
+@media screen and (max-width: 414px) {
+    :root {
+        --fs-hero: clamp(2rem, 2.5vw + 1rem, 2.4rem) ;
+        // --fs-xl-header: 10rem;
+        // --fs-header: 5.5rem;
+        // --fs-paragraph: 2.2rem;
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        // --fs-footer: 1.8rem;
+    }
+}
 
 
 // UTILITIES 
@@ -407,10 +455,10 @@ nav {
     }
     .hero__emoji {
         .circle {
-            height: 37rem;
-            width: 37rem;
+            height: 31rem;
+            width: 31rem;
             img {
-                width: 21rem;
+                width: 19rem;
             }
         }
     }
@@ -660,10 +708,10 @@ main {
                 display: grid;
                 grid-template-rows: 4rem 17rem 1fr;
                 h5 {
-                    font-size: var(--fs-xl-header);
+                    font-size: var(--fs-header);
                 }
                 p {
-                    font-size: var(--fs-header);
+                    font-size: var(--fs-paragraph);
                     line-height: 3.3rem;
                 }
                 button {

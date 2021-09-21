@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  margin: 0;
+  margin: 1;
 }
 
 li {
@@ -53,8 +53,8 @@ html {
   display: grid;
   -ms-grid-columns: 1.7fr 1fr;
       grid-template-columns: 1.7fr 1fr;
-  -ms-grid-rows: 10vh 50vh 10vh 30vh;
-      grid-template-rows: 10vh 50vh 10vh 30vh;
+  -ms-grid-rows: 10vh 50vh 5vh 35vh;
+      grid-template-rows: 10vh 50vh 5vh 35vh;
       grid-template-areas: "nav    nav" "title  emoji" "btn    btn" "arrow  arrow";
   grid-gap: 0.5rem;
 }
@@ -356,7 +356,7 @@ nav input {
 }
 
 .hero__title h2 {
-  padding: 5rem 0;
+  padding: 2rem 0;
   font-weight: 300;
   font-size: 5.3rem;
   line-height: 7.2rem;
@@ -367,7 +367,11 @@ nav input {
 }
 
 .hero__title .hero__titlesecondary {
+  opacity: 0;
+  visibility: hidden;
   display: none;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 .hero__emoji {
@@ -410,34 +414,34 @@ nav input {
           animation: hithere 2s;
 }
 
-.hero__btn {
+#button {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: btn;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  border-bottom: 1px solid #3659ba;
-}
-
-.hero__btn button {
-  background-color: transparent;
+  height: 6rem;
+  width: 20rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: 1px solid #3659ba;
-  padding: 2rem 5rem;
+  background: transparent;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1.8rem;
-  font-weight: 400;
-  font-family: 'Space Grotesk', sans-serif;
   color: #3659ba;
-  margin-bottom: -0.1rem;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+  z-index: 1;
 }
 
-.hero__btn button:hover {
-  background-color: #3659ba;
-  color: white;
+#button:hover {
+  background: #3659ba;
+  color: #fafafa;
 }
 
 .hero__arrow {
@@ -461,6 +465,25 @@ nav input {
 
 .hero__arrow img {
   width: 3.5rem;
+}
+
+#button:hover ~ #title .hero__titlemain {
+  display: none;
+}
+
+#button:hover ~ #title .hero__titlesecondary {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.line {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: btn;
+  border-bottom: 1px solid #3659ba;
+  z-index: 0;
 }
 
 @media screen and (max-width: 1024px) {

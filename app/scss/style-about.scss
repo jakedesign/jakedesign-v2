@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400&display=swap');
+
+$color-primary: hsl(224, 55%, 47%);
+$color-secondary: hsl(0, 0%, 98%);
+$color-lightblue: hsl(225, 50%, 92%);
+$drop-down-hover: hsl(0, 0%, 88%);
+$background-primary: hsl(0, 0%, 90%);
+$background-secondary: hsl(0, 0%, 100%);
+$background-hover: rgb(252, 252, 252);
+$breakpoint-desktop: 1440px;
+$breakpoint-tablet: 680px;
+$breakpoint-mobile: 414px;
+$font-primary: 'Space Grotesk', sans-serif;
+$font-secondary: 'Work Sans', sans-serif;
+
+:root {
+    --fs-hero: 5.3rem;
+    --fs-xl-header: 10rem;
+    --fs-header: 5.5rem;
+    --fs-paragraph: 2.2rem;
+    --fs-links: 2.4rem;
+    --fs-body: 1.8rem;
+    --fs-small: 1.6rem;
+    --fs-footer: 1.8rem;
+}
+
+@media screen and (max-width: 1370px) {
+    :root {
+        --fs-hero: clamp(3rem, 2.8vw + 1rem, 5.2rem) ;
+        --fs-xl-header: clamp(6.5rem, 9vw + 1rem, 10rem);
+        --fs-header: clamp(3rem, 2.7vw + 1rem, 5.5rem );
+        --fs-paragraph: clamp(2rem, 1.4vw + 1rem, 2.2rem);
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        --fs-footer: clamp(1.4rem, 0.6vw + 1rem, 1.8rem);
+    }
+}
+@media screen and (max-width: 1088px) {
+    :root {
+        --fs-hero: clamp(2.5rem, 2.3vw + 1rem, 3.5rem);
+        // --fs-xl-header: 10rem;
+        // --fs-header: 5.5rem;
+        // --fs-paragraph: 2.2rem;
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        // --fs-footer: 1.8rem;
+    }
+}
+@media screen and (max-width: 908px) {
+    :root {
+        --fs-hero: clamp(2.4rem, 1.8vw + 1rem, 3.1rem) ;
+        // --fs-xl-header: 10rem;
+        // --fs-header: 5.5rem;
+        // --fs-paragraph: 2.2rem;
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        // --fs-footer: 1.8rem;
+    }
+}
+@media screen and (max-width: 414px) {
+    :root {
+        --fs-hero: clamp(2rem, 2.5vw + 1rem, 2.4rem) ;
+        // --fs-xl-header: 10rem;
+        // --fs-header: 5.5rem;
+        // --fs-paragraph: 2.2rem;
+        --fs-links: 2.4rem;
+        --fs-body: 1.8rem;
+        --fs-small: 1.6rem;
+        // --fs-footer: 1.8rem;
+    }
+}
+
+
+// UTILITIES 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-primary;
+    background-color: $background-secondary;
+    color: $color-primary;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: $color-primary;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.container {
+    width: calc(100% - 5rem);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+// NAV
+
+nav {
+    grid-area: nav;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    font-size: var(--fs-body);
+    font-weight: 400;
+    .nav__logo {
+        a {
+            transition: 250ms ease;
+        }
+        :hover {
+            opacity: 0.3;
+        }
+    }
+    .nav__list {
+        display: flex;
+        &item {
+            margin-left: 5rem;
+            padding: 2rem 0.2rem;
+            position: relative;
+            &::after {
+                content: "";
+                width: 0;
+                height: 0.2rem;
+                position: absolute;
+                left: 0rem;
+                bottom: 1.4rem;
+                background: $color-primary;
+                transition: width 250ms ease-in-out;
+            }
+            &:hover::after, &:focus::after {
+                width: 100%;
+            }
+            &:hover ul, &:focus ul {
+                opacity: 1;
+                visibility: visible;
+            }
+            &drop {
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                justify-content: center;
+                background: $background-primary;
+                box-shadow: 0 0 6rem hsla(0, 0%, 0%, 0.07);
+                width: 25.7rem;
+                padding: 1rem;
+                gap: 0.1rem;
+                top: 5.8rem;
+                left: -9rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 250ms ease-in-out;
+                li {
+                    padding: 1.2rem 0.1rem;
+                    transition: background 250ms ease-in-out;
+                    .nav__link1 {
+                        padding: 1rem 2rem 1rem 2rem;
+                    }
+                    .nav__link2 {
+                        padding: 1rem 15.5rem 1rem 2rem;
+                    }
+                    .nav__link3 {
+                        padding: 1rem 8.5rem 1rem 2rem;
+                    }
+                    .nav__link4 {
+                        padding: 1rem 11.55rem 1rem 2rem;
+                    }
+                    &:hover, &:focus {
+                        background: $background-hover;
+                    }
+                }
+            }
+        }
+    }
+    .nav__listitem, .nav__arrow {
+        transition: 300ms ease-in-out;
+        &:hover .nav__arrow {
+            transform: rotate(90deg);
+        }
+    }
+    label {
+        visibility: hidden;
+        opacity: 0;
+        width: 5rem;
+        height: 5.5rem;
+        background-color: transparent;
+        position: absolute;
+        cursor: pointer;
+        top: 2.5rem;
+        &::after,
+        &::before {
+            content: "";
+            width: 5rem;
+            height: 0.3rem;
+            background-color: $color-primary;
+            position: absolute;
+            display: block;
+            transition: all 400ms cubic-bezier(1,0,0,1);
+        }
+        &::before {
+            top: 1.6rem;
+            left: 0%;
+            transform-origin: center;
+            transform: rotate(0deg)
+        }
+        &::after {
+            bottom: 1.8rem;
+            left: 0%;
+            transform-origin: center;
+            transform: rotateZ(0deg);
+        }
+    }
+    #toggle:checked ~ label::before {
+        transform: rotateZ(31deg);
+        top: 2.5rem;
+        left: 0%;
+    }
+    #toggle:checked ~ label::after {
+        transform: rotateZ(-31deg);
+        bottom: 2.6rem;
+        left: 0%;
+    }
+    #toggle ~ label {
+        transition: all 300ms cubic-bezier(1,0,0,1);
+    }
+    input {
+        display: none;
+    }
+    @media screen and (max-width: 1024px) {
+        .nav__list {
+            display: none;
+            flex-direction: column;
+            background: $background-primary;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 7rem;
+            width: 100%;
+            height: 91vh;
+            font-size: 3rem;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 2;
+            &item {
+                margin: 4rem 0;
+                padding: 0rem;
+                a {
+                    padding: 2rem;
+                }
+                &::after {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+                &:hover::after, &:focus::after {
+                    width: 0;
+                }
+                &:hover ul, &:focus ul {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                &drop {
+                    display: none;
+                }
+            }
+            img {
+                width: 2.2rem;
+            }
+        }
+        .nav__listitem, .nav__arrow {
+            &:hover .nav__arrow {
+                transform: rotate(0deg);
+            }
+        }
+        label {
+            visibility: visible;
+            opacity: 1;
+            width: 5rem;
+            height: 5.5rem;
+            background-color: transparent;
+            position: absolute;
+            cursor: pointer;
+            top: 0.6rem;
+            right: 0rem;
+            &::after,
+            &::before {
+                content: "";
+                width: 5rem;
+                height: 0.3rem;
+                background-color: $color-primary;
+                position: absolute;
+                display: block;
+                transition: all 400ms cubic-bezier(1,0,0,1);
+            }
+            &::before {
+                top: 1.6rem;
+                left: 0%;
+                transform-origin: center;
+                transform: rotate(0deg)
+            }
+            &::after {
+                bottom: 1.8rem;
+                left: 0%;
+                transform-origin: center;
+                transform: rotateZ(0deg);
+            }
+        }
+        .nav__checkbox:checked ~ ul.nav__list{
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

@@ -20,7 +20,7 @@
                 <label for="toggle" class="nav__toggle"></label>
                 
                 <ul class="nav__list">
-                    <li class="nav__listitem"><a href="page__work">Work <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
+                    <li class="nav__listitem"><a href="#work">Work <img class="nav__arrow" src="images/arrow-angle.svg" alt=""></a>
                         <ul class="nav__listitemdrop">
                             <li><a class="nav__link1" href="project_doe.html">Department of Energy</a></li>
                             <li><a class="nav__link2" href="project_munch.html">Munch</a></li>
@@ -28,15 +28,16 @@
                             <li><a class="nav__link4" href="project_momentum.html">Momentum</a></li>
                         </ul>
                     </li>
-                    <li class="nav__listitem"><a href="page_aboutme.html">About Me <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
-                    <li class="nav__listitem"><a href="page_resume.html">Resume <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
-                    <li class="nav__listitem"><a href="page_contact.html">Contact <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
+                    <li class="nav__listitem"><a href="about.html">About Me <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
+                    <li class="nav__listitem"><a href="resume.html">Resume <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
+                    <li class="nav__listitem"><a href="contact.html">Contact <img src="images/arrow-angle.svg" alt="img-arrow-angle"></a></li>
                 </ul>
             </nav>
 
             <!-- HERO -->
-            <button id="button">
-                Hover Over Me!
+            <button class="hero__button" id="button">
+                <p class="button__desktop">Hover Over Me!</p>
+                <p class="button__mobile">Tap Me!</p>
             </button>
             <div class="line"></div>
             <div class="hero__title" id="title">
@@ -50,7 +51,7 @@
                     creator ✍🏽 designer 🎨 plant dad 🌱 
                     wood worker 📐  snowboarder 🏂 
                     music lover 🎵 pnw wanderer 🌲 
-                    oatmilk lattes ☕️ believer in aliens 👽
+                    oatmilk lattes ☕️ alien believer 👽
                     continually sharpening my craft! ✌🏽
                 </h2>
             </div>
@@ -68,7 +69,7 @@
     </header>
 
     <main class="projects container">
-        <h4 class="project__heading">Work</h4>
+        <h4 class="project__heading" id="work">Work</h4>
         <div class="project__grid">
             <div class="project__image doe__img">
                 <img src="./images/doe-mac.svg" alt="">

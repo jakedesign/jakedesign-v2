@@ -317,7 +317,7 @@ nav input {
     font-size: 3rem;
     opacity: 0;
     visibility: hidden;
-    z-index: 1;
+    z-index: 2;
   }
   nav .nav__listitem {
     margin: 4rem 0;
@@ -412,6 +412,10 @@ nav input {
   line-height: 7.2rem;
 }
 
+.hero__title h2 b {
+  font-weight: 700;
+}
+
 .hero__title .hero__titlemain {
   display: block;
 }
@@ -464,7 +468,7 @@ nav input {
           animation: hithere 2s;
 }
 
-#button {
+.hero__button {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -489,9 +493,13 @@ nav input {
   z-index: 1;
 }
 
-#button:hover {
+.hero__button:hover {
   background: #3659ba;
   color: #fafafa;
+}
+
+.hero__button .button__mobile {
+  display: none;
 }
 
 .hero__arrow {
@@ -517,11 +525,11 @@ nav input {
   width: 3.5rem;
 }
 
-#button:hover ~ #title .hero__titlemain {
+.hero__button:hover ~ #title .hero__titlemain {
   display: none;
 }
 
-#button:hover ~ #title .hero__titlesecondary {
+.hero__button:hover ~ #title .hero__titlesecondary {
   display: block;
   visibility: visible;
   opacity: 1;
@@ -575,6 +583,12 @@ nav input {
   .hero__emoji .circle img {
     width: 16rem;
   }
+  .hero__button .button__mobile {
+    display: block;
+  }
+  .hero__button .button__desktop {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 724px) {
@@ -605,7 +619,7 @@ nav input {
   .hero__emoji .circle img {
     width: 13rem;
   }
-  .hero__btn {
+  .hero__button {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: btn;
@@ -613,10 +627,7 @@ nav input {
         -ms-flex-align: center;
             align-items: center;
     border-bottom: none;
-  }
-  .hero__btn button {
     width: 100%;
-    margin-bottom: 0rem;
   }
   .hero__arrow {
     padding-bottom: 2rem;
@@ -940,6 +951,25 @@ main .project__grid .project__info button:hover img, main .project__grid .projec
   }
   main .project__grid .project__info button:hover img, main .project__grid .project__info button:active img {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  main .project__grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 0.5fr 1fr 0.5fr;
+        grid-template-rows: 1fr 0.5fr 1fr 0.5fr;
+    row-gap: 1rem;
+  }
+  main .project__grid .project__image {
+    height: 40rem;
+  }
+  main .project__grid .project__image img {
+    width: 37rem;
+    padding: 2rem;
   }
 }
 

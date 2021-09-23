@@ -280,7 +280,7 @@ nav {
             font-size: 3rem;
             opacity: 0;
             visibility: hidden;
-            z-index: 1;
+            z-index: 2;
             &item {
                 margin: 4rem 0;
                 padding: 0rem;
@@ -360,6 +360,9 @@ nav {
         font-weight: 300;
         font-size: var(--fs-hero);
         line-height: 7.2rem;
+        b {
+            font-weight: 700;
+        }
     }
     .hero__titlemain {
         display: block;
@@ -392,7 +395,7 @@ nav {
         }
     }
 }
-#button {
+.hero__button {
     grid-area: btn;
     height: 6rem;
     width: 20rem;
@@ -410,6 +413,9 @@ nav {
         background: $color-primary;
         color: $color-secondary
     }
+    .button__mobile {
+        display: none;
+    }
 }
 
 .hero__arrow {
@@ -424,13 +430,12 @@ nav {
     }
 }
 
-#button:hover ~ #title {
+.hero__button:hover ~ #title {
     .hero__titlemain {
         display: none;
     }
     .hero__titlesecondary {
         display: block;
-        
         visibility: visible;
         opacity: 1;
     }
@@ -490,6 +495,14 @@ nav {
             }
         }
     }
+    .hero__button {
+        .button__mobile {
+            display: block;
+        }
+        .button__desktop {
+            display: none;
+        }
+    }
 }
 @media screen and (max-width: 724px) {
     .landing__page {
@@ -522,14 +535,11 @@ nav {
             }
         }
     }
-    .hero__btn {
+    .hero__button {
         grid-area: btn;
         align-items: center;
         border-bottom: none;
-        button {
-            width: 100%;
-            margin-bottom: 0rem;
-        }
+        width: 100%;
     }
     .hero__arrow {
         padding-bottom: 2rem;
@@ -721,6 +731,7 @@ main {
             }
         }
     }
+   
     @media screen and (max-width: 724px) {
         h4 {
             font-size: var(--fs-xl-header);
@@ -788,6 +799,21 @@ main {
                         }
                     }
                 }  
+            }
+        }
+    }
+    @media screen and (max-width: 565px) {
+        .project__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.5fr 1fr 0.5fr;
+            row-gap: 1rem;
+            .project__image {
+                height: 40rem;
+                img {
+                    width: 37rem;
+                    padding: 2rem;
+                }
             }
         }
     }

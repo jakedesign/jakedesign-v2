@@ -65,7 +65,7 @@ html {
       grid-template-columns: 1fr;
   -ms-grid-rows: 10vh 90vh;
       grid-template-rows: 10vh 90vh;
-      grid-template-areas: "nav" "contact";
+      grid-template-areas: "nav" "contact";
   grid-gap: 0.5rem;
 }
 

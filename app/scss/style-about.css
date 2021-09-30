@@ -390,7 +390,7 @@ nav input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .about-box1 {
@@ -413,6 +413,7 @@ nav input {
   margin: 0;
   padding-top: 2rem;
   line-height: 3.2rem;
+  max-width: 81rem;
 }
 
 .content-flex {
@@ -473,7 +474,7 @@ footer .footer__grid {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 15rem 2rem 13rem;
       grid-template-rows: 15rem 2rem 13rem;
-      grid-template-areas: "contact    up" "line       line" "social     copy";
+      grid-template-areas: "contact    up" "line       line" "social     copy";
 }
 
 footer .footer__grid .say-hello {
@@ -629,7 +630,7 @@ footer .footer__grid .page-info .selfcoded {
         grid-template-columns: 1fr 0.8fr;
     -ms-grid-rows: 14rem 7rem 2rem 15rem;
         grid-template-rows: 14rem 7rem 2rem 15rem;
-        grid-template-areas: "hi     up"  "social ." "line   line" "copy   .";
+        grid-template-areas: "hi     up"  "social ." "line   line" "copy   .";
   }
   footer .footer__grid .say-hello {
     -ms-grid-row: 1;

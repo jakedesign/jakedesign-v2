@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    cursor: url('../images/cursor-blackdot.svg'), auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #3554A7;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 20px;
+    margin-bottom: 10vh;
+}
+
+.cursor {
+    position: absolute;
+    width: 3rem; 
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid black;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+}
+
+/* DOE HEADER */
+
+.header-box {
+    display: flex;
+    height: 500px;
+    margin-top: 70px;
+}
+
+.project-info {
+    width: 40%;
+}
+
+.project-info h1 {
+    font-size: 70px;
+    font-weight: 400;
+    color: #375BBB;
+    margin: 0 0 20px 0;
+}
+
+.project-info h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: #375BBB;
+    margin: 0;
+    padding: 0;
+}
+.project-info p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #375BBB;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.project-img {
+    width: 55%;
+}
+
+hr {
+    border: 1px solid #375BBB;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.header-box img {
+    width: 100%;
+}
+
+/* CASESTUDY */
+
+.casestudy {
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+}
+
+.casestudy-nav {
+    width: 20%;
+}
+
+.casestudy-info {
+    width: 80%;
+}
+
+.casestudy-nav ul {
+    position: sticky;
+    top: 60px;
+    padding-inline-start: 0px;
+}
+
+.casestudy-nav li {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    
+}
+
+.casestudy-nav li:hover {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.casestudy-info h1{
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    color: #375BBB;
+}
+
+.casestudy-info h2 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 300;
+    color: #375BBB; 
+    margin-top: 35px;
+}
+
+.casestudy-info h3 {
+    font-family: 'Work Sans', sans-serif;
+   
+}
+
+.casestudy-info h4 {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    font-size: 50px;
+    font-weight: 300;
+    color: #375BBB;
+}
+
+.casestudy-info h5 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 300;
+    color: #375BBB;
+    margin-top: 20px;
+}
+
+.casestudy-info h6 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    color: #375BBB;
+}
+
+.casestudy-info li {
+    font-family: 'Work Sans', sans-serif;
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #375BBB;
+    list-style-type: disc;
+    text-indent: -25px;
+    line-height: 1.5;
+    list-style-position: inside;
+}
+
+.casestudy-info p{
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    line-height: 1.8;
+    font-size: 20px;
+    font-weight: 300;
+    color: #375BBB;
+}
+
+.timeline {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.paths {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.path1 {
+    border-top: 5px solid #375BBB;
+    width: 320px;
+}
+
+.usertest {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testbox {
+    border: 1px solid #375BBB;
+    border-radius: 10px;
+    width: 330px;
+    height: 170px;
+    background-color: #c4c4c446;
+}
+
+.testbox p {
+    padding: 12px;
+}
+
+.heval {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.hebox1 {
+    width: 90%;
+    margin-top: 30px;
+}
+
+.eval {
+    height: 150px;
+}
+.hebox1 h3{
+    color: #375BBB;
+    font-size: 25px;
+}
+
+.e-num {
+    border-bottom: 2px solid #375BBB;
+}
+
+.hebox2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hebox2 img {
+    max-width: 700px;
+}
+
+.info-arc {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.inf-box {
+    width: 320px;
+    border-top: 2px solid #375BBB;
+}
+
+.info-arc-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+.info-arc-img img{
+width: 1050px;
+}
+
+.proto-img {
+    background-image: url(../images/prototype1.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 690px;
+}
+
+.proto-changes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.pro-box {
+    width: 348px;
+}
+
+.proto-wireframe {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proto-wireframe img {
+    width: 1090px;
+}
+
+.type {
+    padding-top: 40px;
+}
+.type img {
+    width: 700px;
+}
+
+.color-p {
+    padding-top: 40px;
+}
+
+.color-p img {
+    width: 1040px;
+}
+
+.logo-m {
+    padding-top: 40px;
+}
+
+.compo {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+.compo img {
+    width: 1090px;
+}
+
+.hifi-grid {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-content: space-between;
+}
+
+.hifi-one img {
+    width: 535px;
+}
+
+.hifi-mobile {
+    margin: 20px 0 50px 0;
+}
+.hifi-mobile img {
+    width: 1090px;
+}
+
+button {
+    margin-top: 60px;
+    border: 1px solid #375BBB;
+    background-color: transparent;
+    color: #375BBB;
+    padding: 15px 100px;
+    font-size: 25px;
+    font-family: 'Space Grotesk', sans-serif;
+    width: 100%;
+    cursor: url('../images/cursor-blackdot.svg'), auto;
+}
+
+button:hover {
+    margin-top: 60px;
+    border: 1px solid #375BBB;
+    background-color: #375BBB;
+    color: #ffffff;
+    padding: 15px 100px;
+    font-size: 25px;
+    font-family: 'Space Grotesk', sans-serif;
+    width: 100%;
+}

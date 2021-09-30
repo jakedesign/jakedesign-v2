@@ -704,7 +704,7 @@ nav input {
 main h4 {
   font-size: var(--fs-xl-header);
   font-weight: 300;
-  padding: 17rem 0 10rem 0;
+  padding: 13rem 0 10rem 0;
 }
 
 main .project__grid {
@@ -712,8 +712,8 @@ main .project__grid {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   gap: 5rem;
   row-gap: 10rem;
 }
